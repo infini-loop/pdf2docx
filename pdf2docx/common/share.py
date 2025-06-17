@@ -125,7 +125,7 @@ def lower_round(number:float, ndigits:int=0):
 
 def decode(s:str):
     '''Try to decode a unicode string.'''
-    b = bytes(ord(c) for c in s)
+    b = s.encode()
     for encoding in ['utf-8', 'gbk', 'gb2312', 'iso-8859-1']:
         try:
             res = b.decode(encoding)

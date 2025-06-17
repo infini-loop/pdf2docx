@@ -39,9 +39,9 @@ from ..common import docx
 
 class TableBlock(Block):
     '''Table block.'''
-    def __init__(self, raw:dict=None):
+    def __init__(self, raw:dict=None, parent = None):
         if raw is None: raw = {}
-        super().__init__(raw)
+        super().__init__(raw, parent)
 
         # collect rows
         self._rows = Rows(parent=self).restore(raw.get('rows', []))
